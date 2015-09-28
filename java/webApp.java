@@ -1,19 +1,24 @@
 /*
- * Decompiled with CFR 0_102.
  *
- * Could not load the following classes:
- *  Player
+ *
+ *
+ *
  */
+ //imports
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.image.*;
+import javax.imageio.ImageIO;
 
 public class webApp extends Applet implements ActionListener{
     private String out = "";
     private int count = 0;
     private ArrayList<String> saveOut = new ArrayList<String>();
+
 
     TextField nameField;
 
@@ -26,6 +31,7 @@ public class webApp extends Applet implements ActionListener{
     Button genFile;
 
     public void init() {
+
         setLayout(new FlowLayout());
         nameField = new TextField("Enter Player's name.");
         speedField = new TextField("Enter Player's mile time.");
@@ -42,7 +48,14 @@ public class webApp extends Applet implements ActionListener{
     }
 
 
-    public void paint(Graphics g) {
+    public void paint(Graphics g){
+      //try{
+      //BufferedImage bGimage = ImageIO.read(new File("img/Teamo-logo.png"));
+        //g.drawImage(bGimage,0,0,this);
+      //}catch(IOException e){
+        //e.printStackTrace();
+      //}
+
         if (count == 0) {
             g.drawString("", 20, 100);
         } else if (count != 0) {
