@@ -54,10 +54,10 @@ public class webApp extends Applet implements ActionListener{
         //e.printStackTrace();
       //}
       g.setFont(myFont);
+      g.setColor(Color.DARK_GRAY);
         if (count == 0) {
             g.drawString("", 20, 100);
         } else if (count != 0) {
-          g.setColor(Color.DARK_GRAY);
             g.drawString(smit+ " " + out, 20, 100);
             int n = 200;
             for (int i = 0; i < saveOut.size(); i++) {
