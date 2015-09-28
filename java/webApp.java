@@ -13,25 +13,23 @@ import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
+import java.awt.Font;
 
 public class webApp extends Applet implements ActionListener{
     private String out = "";
     private int count = 0;
     private ArrayList<String> saveOut = new ArrayList<String>();
-
-
+    Font myFont = new Font("Comic Sans MS", Font.BOLD, 14);
+    private static String smit = "Submitted!";
     TextField nameField;
-
     TextField speedField;
-
     TextField ballField;
-
     Button enter;
-
     Button genFile;
 
     public void init() {
-
+        setBackground(Color.LIGHT_GRAY);
+        setForeground(Color.black);
         setLayout(new FlowLayout());
         nameField = new TextField("Enter Player's name.");
         speedField = new TextField("Enter Player's mile time.");
@@ -55,20 +53,18 @@ public class webApp extends Applet implements ActionListener{
       //}catch(IOException e){
         //e.printStackTrace();
       //}
-
+      g.setFont(myFont);
         if (count == 0) {
             g.drawString("", 20, 100);
         } else if (count != 0) {
-            g.drawString("Submitted! " + out, 20, 100);
+          g.setColor(Color.LIGHT_GRAY);
+            g.drawString(smit+ " " + out, 20, 100);
             int n = 200;
             for (int i = 0; i < saveOut.size(); i++) {
                 g.drawString(saveOut.get(i), 20, n);
                 n+=20;
             }
-
         }
-
-
     }
 
     public void actionPerformed(ActionEvent actionEvent) {

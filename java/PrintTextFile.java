@@ -19,7 +19,7 @@ public class PrintTextFile {
         content+=input.get(i) + "\n";
       }
 
-			File file = new File("/datafiles/storage.txt");//TODO FIX THIS!!!!
+			File file = new File("datafiles/storage.txt");//TODO FIX THIS!!!!
 
 			// if file doesnt exists, then create it
 			if (!file.exists()) {
