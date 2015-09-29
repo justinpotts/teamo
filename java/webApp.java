@@ -83,7 +83,18 @@ public class webApp extends Applet implements ActionListener{
             repaint();
         }
         else if(actionEvent.getSource()==genFile){
-          PrintTextFile p = new PrintTextFile(saveOut);
+
+          try{
+            PrintTextFile data = new PrintTextFile("/Users/Alex/Desktop/thisisatest.txt", true);
+            String content = "";
+            for(int i = 0; i < saveOut.size(); i++){
+              content = saveOut.get(i);
+              data.writeToFile(content + "\n");
+            }
+          }catch(IOException e){
+            e.printStackTrace();
+          }
+
         }
     }
 }
