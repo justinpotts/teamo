@@ -19,11 +19,12 @@ public class webApp extends Applet implements ActionListener{
     private String out = "";
     private int count = 0;
     private ArrayList<String> saveOut = new ArrayList<String>();
-    Font myFont = new Font("Comic Sans MS", Font.BOLD, 14);
+    Font myFont = new Font("Palatino Linotype", Font.BOLD, 14);
     private static String smit = "Submitted!";
     TextField nameField;
     TextField speedField;
     TextField ballField;
+    TextField heightField;
     Button enter;
     Button genFile;
 
@@ -34,11 +35,13 @@ public class webApp extends Applet implements ActionListener{
         nameField = new TextField("Enter Player's name.");
         speedField = new TextField("Enter Player's mile time.");
         ballField = new TextField("Rate Player's ball control out of 10.");
+        heightField = new TextField("Enter Player's height in meters");
         enter = new Button("Submit");
         genFile = new Button("Generate Text File");
         add(nameField);
         add(speedField);
         add(ballField);
+        add(heightField);
         add(enter);
         add(genFile);
         enter.addActionListener(this);
@@ -72,15 +75,15 @@ public class webApp extends Applet implements ActionListener{
             String string = nameField.getText();
             double d = Double.parseDouble(speedField.getText());
             int n = (int)Double.parseDouble(ballField.getText());
-            Player player = new Player(string, n, d);
+            double h = Double.parseDouble(heightField.getText());
+            Player player = new Player(string, n, d, h);
             out = player.stringify();
             saveOut.add(out);
             count++;
             repaint();
         }
         else if(actionEvent.getSource()==genFile){
-          PrintTextFile p = new PrintTextFile();
-          p.textFileMaker(saveOut);
+          PrintTextFile p = new PrintTextFile(saveOut);
         }
     }
 }
