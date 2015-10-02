@@ -1,6 +1,6 @@
 /*
  *
- *
+ * THIS APPLET IS FOR THE TEXT FIELDS, ENTER, AND TEXT FILE BUTTON.
  *
  *
  */
@@ -15,7 +15,7 @@ import java.awt.image.*;
 import javax.imageio.ImageIO;
 import java.awt.Font;
 
-public class webApp extends Applet implements ActionListener{
+public class mainApplet extends Applet implements ActionListener{
     private String out = "";
     private int count = 0;
     private ArrayList<String> saveOut = new ArrayList<String>();
