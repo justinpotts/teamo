@@ -14,7 +14,6 @@ players = [
             {"playerName":"B. Gomez", "ballControl":"9" , "mileTime":"6:59" , "height":"64"},
 '''
 players = []
-]
 playersInGame = {}
 playersByBallControl = []
 playersByMileTime = []
