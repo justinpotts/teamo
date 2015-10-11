@@ -18,10 +18,9 @@ import java.awt.Font;
 public class mainApplet extends Applet implements ActionListener{
     private String out = "";
     private int count = 0;
-    private ArrayList<String> saveOut = new ArrayList<String>();
+    public ArrayList<String> saveOut = new ArrayList<String>();
     Font myFont = new Font("Palatino Linotype", Font.BOLD, 14);
     private static String smit = "Submitted!";
-    PrintOutApplet ret = new PrintOutApplet();
     TextField nameField;
     TextField speedField;
     TextField ballField;
@@ -30,10 +29,6 @@ public class mainApplet extends Applet implements ActionListener{
     Button genFile;
     int intValue = Integer.parseInt( "F5F5F5",16);
     Color bgColor = new Color( intValue );
-
-    public ArrayList<String> sendData(){
-      return saveOut;
-    }
 
     public void init() {
         setBackground(bgColor);
@@ -65,19 +60,23 @@ public class mainApplet extends Applet implements ActionListener{
       //}
       g.setFont(myFont);
       g.setColor(Color.DARK_GRAY);
-        g.drawString("Submitted", 100, 100);
-        ret.repaint();
-        //if (count == 0) {
-            //g.drawString("", 20, 100);
-        // if (count != 0) {
-            //g.drawString(smit+ " " + out, 20, 100);
-            //int n = 200;
-            //for (int i = 0; i < saveOut.size(); i++) {
-                //g.drawString(saveOut.get(i), 20, n);
-                //n+=20;
-            //}
-        //}
+        //ret.repaint();
+        if (count == 0) {
+            g.drawString("", 20, 100);
+        if (count != 0) {
+            g.drawString(smit+ " " + out, 20, 100);
+            int n = 200;
+            for (int i = 0; i < saveOut.size(); i++) {
+                g.drawString(saveOut.get(i), 20, n);
+                n+=20;
+                repaint();
+            }
+            repaint();
+        }
+      repaint();
     }
+    repaint();
+  }
 
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == enter) {
@@ -85,7 +84,7 @@ public class mainApplet extends Applet implements ActionListener{
             double d = Double.parseDouble(speedField.getText());
             int n = (int)Double.parseDouble(ballField.getText());
             double h = Double.parseDouble(heightField.getText());
-            Player player = new Player(string, n, d, h);
+            Player player = new Player(string, h, n, d);
             out = player.stringify();
             saveOut.add(out);
             count++;
@@ -106,4 +105,6 @@ public class mainApplet extends Applet implements ActionListener{
 
         }
     }
+
+
 }

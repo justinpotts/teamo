@@ -3,9 +3,15 @@
 // player object
 //coded by ALEX MEZA!!!!!!!!
 //
+import java.util.ArrayList;
+import java.util.List;
 
 public class Player{
+
   private String nm; private int ballctrl; private double speed; private double height;
+
+  public static List<String> players = new ArrayList<String>();
+
   public Player(){//empty constructor
     nm = "";
     height = 0;
@@ -36,7 +42,7 @@ public class Player{
     height = h;
     speed = 0;
   }
-  public Player(String name, int ctrl, double mile, double h){//sets all fields
+  public Player(String name, double h, int ctrl, double mile){//sets all fields
     nm = name;
     ballctrl = ctrl;
     speed = mile;
@@ -66,8 +72,14 @@ public class Player{
   public String getHeight(){
     return ""+ height;
   }
+  public List<String> getData(){
+    return players;
+  }
   public String stringify(){
-    String output = "Name :: " + getName() + ", Ball Control :: " + getCtrl() + ", Mile Time :: " + getSpeed() + ", Height :: "+ getHeight();
+    String output = "Name :: " + getName() +  ", Height :: "+ getHeight() + ", Ball Control :: " + getCtrl() + ", Mile Time :: " + getSpeed();
+
+    players.add(output);
+
     return output;
   }
 

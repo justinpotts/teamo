@@ -15,7 +15,7 @@ import java.awt.Font;
 
 
 public class PrintOutApplet extends Applet{
-  private ArrayList<String> ret = new ArrayList<String>();
+  public ArrayList<String> ret = new ArrayList<String>();
   Font myFont = new Font("Palatino Linotype", Font.BOLD, 14);
   Checkbox sortA;
   Checkbox sortB;
@@ -23,6 +23,7 @@ public class PrintOutApplet extends Applet{
   Checkbox sortS;
   int intValue = Integer.parseInt( "F5F5F5",16);
   Color aColor = new Color( intValue );
+
   public void init(){
     setLayout(new FlowLayout());
     setBackground(aColor);
@@ -36,16 +37,25 @@ public class PrintOutApplet extends Applet{
     add(sortH);
     add(sortS);
   }
+
   public void paint(Graphics g){
     g.setFont(myFont);
     g.setColor(Color.DARK_GRAY);
+    //Applet mainApplet = getApplet("input");
+    //ret = mainApplet.sendData();
+    //ret = test.sendData();
+    int x = 100;
+    for(int i = 0; i < ret.size(); i++){
+      g.drawString(ret.get(i), 20, x);
+      x+=20;
+    }
         int n = 200;
         if(sortA.getState()){
-          //ret = mainApplet.sendData();
         for (int i = 0; i < ret.size(); i++) {
             g.drawString(ret.get(i), 20, n);
             n+=20;
           }
         }
       }
-  }
+
+}
