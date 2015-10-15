@@ -18,30 +18,6 @@ public class Player{
     ballctrl = 0;
     speed = 0.0;
   }
-  public Player(String name){//sets a name
-    nm = name;
-    height = 0;
-    ballctrl = 0;
-    speed = 0.0;
-  }
-  public Player(int c){//sets a name
-    nm = "";
-    height = 0;
-    ballctrl = c;
-    speed = 0.0;
-  }
-  public Player(double s){//sets a name
-    nm = "";
-    ballctrl = 0;
-    height = 0;
-    speed = s;
-  }
-  public Player(double h, String random){//sets a height
-    nm = "";
-    ballctrl=0;
-    height = h;
-    speed = 0;
-  }
   public Player(String name, double h, int ctrl, double mile){//sets all fields
     nm = name;
     ballctrl = ctrl;
