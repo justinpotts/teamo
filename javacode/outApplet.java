@@ -28,8 +28,7 @@ public class outApplet extends Applet{
   }
   public void addString(String s){
    drawPlayer = s;
-   bayy = ayy.listIterator();
-   bayy.add(s); //listiterator.add!
+   ayy.add(s);
    repaint();
   }
   public void paint(Graphics g){
@@ -39,18 +38,16 @@ public class outApplet extends Applet{
     g.drawString("This only shows that the applet exists!",20, 100);
 
     List<String> dat = new ArrayList<String>();
-    ListIterator<String> z = dat.listIterator();
+
 
 
 
     int count = 200;
     g.drawString(drawPlayer,20,count);
-    bayy.previous();
-    bayy.remove();
     count+=20;
     int n = 200;
-    while(z.hasNext()){
-      g.drawString(z.next(), 20, n);
+    for(int i = 0; i < ayy.size(); i++){
+      g.drawString(ayy.get(i), 20, n);
       n+=20;
     }
 
