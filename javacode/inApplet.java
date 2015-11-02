@@ -20,7 +20,7 @@ public class inApplet extends Applet implements ActionListener{
 
   JButton enter;
 
-  Team addthing = new Team();
+
   Font myFont = new Font("Palatino Linotype", Font.BOLD, 14); //Creates Font
 
   int intValue = Integer.parseInt( "F5F5F5",16); Color bgColor = new Color( intValue ); //Sets applet background color
@@ -53,7 +53,7 @@ public class inApplet extends Applet implements ActionListener{
       int b = Integer.parseInt(ballBox.getText());
       double m = Double.parseDouble(mileBox.getText());
       Player save = new Player(n,h,b,m);
-      addthing.addPlayer(save.stringify());
+      save.stringify();
 
     }
   }
